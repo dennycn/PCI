@@ -1,5 +1,7 @@
 from math import tanh
-from pysqlite2 import dbapi2 as sqlite
+#from pysqlite2 import dbapi2 as sqlite
+# Keefe: after python 2.5, sqlite become standard library
+from sqlite3 import dbapi2 as sqlite
 
 def dtanh(y):
     return 1.0-y*y

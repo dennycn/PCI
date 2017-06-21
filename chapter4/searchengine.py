@@ -1,7 +1,7 @@
 import urllib2
 from BeautifulSoup import *
 from urlparse import urljoin
-from pysqlite2 import dbapi2 as sqlite
+from sqlite3 import dbapi2 as sqlite
 import nn
 mynet=nn.searchnet('nn.db')
 
@@ -58,7 +58,8 @@ class crawler:
   # Extract the text from an HTML page (no tags)
   def gettextonly(self,soup):
     v=soup.string
-    if v==Null:   
+    # Keefe: None install of Null
+    if v == None:    
       c=soup.contents
       resulttext=''
       for t in c:

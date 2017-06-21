@@ -18,6 +18,7 @@ def readfile(filename):
 
 from math import sqrt
 
+# Keefe Note: the same to the chapter1: sim_pearson
 def pearson(v1,v2):
   # Simple sums
   sum1=sum(v1)

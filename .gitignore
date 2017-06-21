@@ -1,4 +1,8 @@
 *.py[cod]
+# other
+*.jpg
+*.jpeg
+Thumbs.db
 
 # C extensions
 *.so

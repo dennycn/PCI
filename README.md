@@ -1,9 +1,9 @@
-PCI
+PCI - Programming Collective Intelligence
 ===
 
 This is the example code from the book:
 
-Programming Collective Intelligence By Toby Segaran. 
+Programming Collective Intelligence By Toby Segaran.
 Copyright 2007 Toby Segaran, 978-0-596-52932-1
 
 
@@ -21,14 +21,14 @@ http://shop.oreilly.com/product/9780596529321.do
 ### Code example
 
   import nn
-  
+
   online, pharmacy = 1, 2
   spam, notspam = 1, 2
   possible = [spam, notspam]
-  
+
   neuralnet = nn.searchnet('nntest.db')
   neuralnet.maketables()
-  
+
   neuralnet.trainquery([online], possible, notspam)
   neuralnet.trainquery([online, pharmacy], possible, spam)
   neuralnet.trainquery([pharmacy], possible, notspam)
@@ -38,12 +38,12 @@ http://shop.oreilly.com/product/9780596529321.do
 
   neuralnet.trainquery([online], possible, notspam)
   neuralnet.getresult([online], possible)
- 
+
   neuralnet.trainquery([online], possible, notspam)
   neuralnet.getresult([online], possible)
 
 
-### Strenghts and Weaknesses  
+### Strenghts and Weaknesses
 
 - Neural networks can handle **complex nonlinear functions** and **discover dependencies** between different inputs.
 - Any number can be used as an input, and the network can also estimate numbers as outputes.
@@ -51,22 +51,22 @@ http://shop.oreilly.com/product/9780596529321.do
 - They can be used for applications in which there is a continuous stream of training data.
 - They are a black box method and this is the major downside: they can have hundreds of nodes and thousands of synapses hence it's not possible to understand the reasoning process.
 - There are no definitive rules for choosing the training rate and network size for a particular problem. This decision usually requires a good amount of experimentation. A training rate too high means that the network might overgeneralize on noisy data, while one that's too low means it might never learn, given the data you have.
- 
+
 
 
 Bayesian Classifier (Chapter 6)
 -------------------
 
-- For documen classification system: spam filtering or dividing up a set of document 
+- For documen classification system: spam filtering or dividing up a set of document
 - It works on any dataset that can be turned into list of features: A feature is something that is either present or absent fot a given item
 - For documents the futures are the words in the document, but they could also be characteristics of an undefined object: symptons of a diseas etc
 
 ### naive Bayes classifier
 
   P(Category | Document) = P(Document | Categoty) * P(Category) / P(Document)
-  
+
   where:
-  
+
   P(Document | Category) = P(Word1 | Category) * P(Word2 | Cagetory) ........ = &prod;P(wi | Category)
 
 
@@ -115,9 +115,9 @@ Bayesian Classifier (Chapter 6)
 
 ### Code example
 
-  
+
     import treepredict
-   
+
     # fruits with their colors and size
     fruits = [
               [4, 'red', 'apple'],
@@ -126,7 +126,7 @@ Bayesian Classifier (Chapter 6)
               [1, 'green', 'grape'],
               [5, 'red', 'apple']
              ]
-    
+
     # train the tree
     tree = treepredict.buildtree(fruits)
 
@@ -134,20 +134,20 @@ Bayesian Classifier (Chapter 6)
     treepredict.classify([2, 'red'], tree)
     treepredict.classify([5, 'red'], tree)
     treepredict.classify([1, 'green'], tree)
-    
+
     treepredict.printtree(tree)
-    
+
     treepredict.drawtree(tree, jpeg='treeview.jpg')
 
 
-  
+
 
 this is the tree:
 
 ``
-    0:4? 
+    0:4?
     T-> {'apple': 3}
-    F-> 1:green? 
+    F-> 1:green?
       T-> {'grape': 1}
       F-> {'cherry': 1}
 ``
@@ -187,11 +187,11 @@ this is the tree:
     param.kernel_type = RBF
     param.C = 10
     m=svm_train(prob, param)
-  
+
     m.predict([2,2])
 
 (this code do not work well. It's not clear here the meaning of the svm_model.predict ... )
-  
+
 
 ### Strenghts and Weaknesses
 

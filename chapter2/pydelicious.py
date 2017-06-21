@@ -168,7 +168,8 @@ class _Waiter:
         timeago = tt - self.lastcall
 
         if self.lastcall and DEBUG>2:
-            print >>sys.stderr, "Lastcall: %s seconds ago." % lastcall
+            pass
+            #print >>sys.stderr, "Lastcall: %s seconds ago." % lastcall
 
         if timeago <= self.wait:
             if DEBUG>0: print >>sys.stderr, "Waiting %s seconds." % self.wait
@@ -194,7 +195,9 @@ class DefaultErrorHandler(urllib2.HTTPDefaultErrorHandler):
     Handles HTTP Error, currently only 503.
     '''
     def http_error_503(self, req, fp, code, msg, headers):
-        raise urllib2.HTTPError(req, code, throttled_message, headers, fp)
+        pass
+        
+        #raise urllib2.HTTPError(req, code, throttled_message, headers, fp)
 
 
 class post(dict):
