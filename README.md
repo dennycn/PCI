@@ -9,6 +9,15 @@ Copyright 2007 Toby Segaran, 978-0-596-52932-1
 
 http://shop.oreilly.com/product/9780596529321.do
 
+## 常见代码错误
+###  sqlite
+python 2.6后，sqlite成为标准库，无需安装。
+```
+# import sqlite
+# discard: from pysqlite2 import
+from sqlite3 import dbapi2 as sqlite
+```
+
 
 ## Neural Network (Chapter 4)
 

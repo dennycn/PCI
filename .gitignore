@@ -3,6 +3,7 @@
 *.jpg
 *.jpeg
 Thumbs.db
+test1.db
 
 # C extensions
 *.so

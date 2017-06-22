@@ -4,7 +4,7 @@
 @desc: searchEngine
 @version: 1.0
 @author: keefe
-@date: 2017/6/16
+@date: 2017/6/21
 '''
 
 import nn
@@ -13,13 +13,14 @@ if __name__ == "__main__":
     ''' 
     '''
     mynet = nn.searchnet('nn.db')
-    #mynet.maketables()
-    wWorld,wRiver,wBank = 101,102,103
-    uWorldBank,uRiver,uEarth = 201,202,203
+    # mynet.maketables()
+    wWorld, wRiver, wBank = 101, 102, 103
+    uWorldBank, uRiver, uEarth = 201, 202, 203
     # 创建带样例单词和URL ID的隐藏节点
-    mynet.generatehiddennode([wWorld,wBank], [uWorldBank,uRiver,uEarth])
+    mynet.generatehiddennode([wWorld, wBank], [uWorldBank, uRiver, uEarth])
     for c in mynet.con.execute('select * from wordhidden'): print c
+    print 'hiddenurl: '
     for c in mynet.con.execute('select * from hiddenurl'): print c    
     
-    print mynet.getresult([wWorld,wBank], [uWorldBank,uRiver,uEarth])
+    print mynet.getresult([wWorld, wBank], [uWorldBank, uRiver, uEarth])
     
