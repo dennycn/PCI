@@ -259,10 +259,10 @@ class humanplayer:
     return move
 
 
-class fwrapper:
+class fwrapper2:
   def __init__(self,function,params,name):
     self.function=function
-    self.childcount=param
+    self.childcount=params
     self.name=name
     
 #flist={'str':[substringw,concatw],'int':[indexw]}

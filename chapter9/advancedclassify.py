@@ -20,7 +20,7 @@ def plotagematches(rows):
           [r.data[1] for r in rows if r.match==0] 
   
   plot(xdm,ydm,'bo')
-  plot(xdn,ydn,'b+')
+  plot(xdn,ydn,'r+')
   
   show()
 
